@@ -28,7 +28,7 @@
  * SUCH DAMAGE.
  */
 
-class M_form__confirm extends M_form__form {
+class B_form__confirm extends B_form__form {
 
 	protected $inputs = array(
 		'question' => null,

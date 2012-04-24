@@ -35,7 +35,7 @@
  */
 
 
-class M_form__show extends Module {
+class B_form__show extends Block {
 
 	protected $inputs = array(
 		'form' => array(),

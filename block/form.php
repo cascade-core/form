@@ -33,7 +33,12 @@
  *
  */
 
-class M_form__form extends Module {
+if (!class_exists('NForm')) {
+	require DIR_PLUGIN.'form/lib/nette.min.php';
+}
+
+
+class B_form__form extends Block {
 
 	protected $inputs = array(
 		'defaults' => null,
