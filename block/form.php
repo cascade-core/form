@@ -28,9 +28,12 @@
  * SUCH DAMAGE.
  */
 
-/*
- * See http://doc.nettephp.com/en/nette-forms
+/**
+ * Nette form. Form is created from configuration but this block should be
+ * inherited and protected methods reimplemented.
  *
+ * See also form/show.
+ * See http://doc.nettephp.com/en/nette-forms
  */
 
 if (!class_exists('NForm')) {

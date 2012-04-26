@@ -28,19 +28,17 @@
  * SUCH DAMAGE.
  */
 
-
-/*
- * See http://doc.nettephp.com/en/nette-forms
- *
+/**
+ * Show form created by form/form block.
  */
 
 
 class B_form__show extends Block {
 
 	protected $inputs = array(
-		'form' => array(),
-		'template' => 'form/show',
-		'hide' => false,
+		'form' => array(),		// Form from form/form block.
+		'template' => 'form/show',	// Template to use.
+		'hide' => false,		// Do not show block.
 		'slot' => 'default',
 		'slot-weight' => 50,
 		'*' => null,
@@ -55,7 +53,7 @@ class B_form__show extends Block {
 	public function main()
 	{
 		if (!$this->in('hide')) {
-			                        $data = array();
+			$data = array();
                         foreach ($this->input_names() as $in) {
                                 if (!in_array($in, array('form', 'template', 'hide', 'slot', 'slot-weight', 'enable'))) {
                                         $data[$in] = $this->in($in);

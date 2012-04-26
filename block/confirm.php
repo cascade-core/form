@@ -28,6 +28,10 @@
  * SUCH DAMAGE.
  */
 
+/**
+ * Simple confirmation form. Question with yes and no buttons.
+ */
+
 class B_form__confirm extends B_form__form {
 
 	protected $inputs = array(
