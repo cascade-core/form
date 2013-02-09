@@ -61,14 +61,14 @@ class B_form__form extends Block {
 	{
 		/* prepare form */
 		$form = new NForm($this->id());
-		$form->getElementPrototype()->id = $this->full_id();
+		$form->getElementPrototype()->id = $this->fullId();
 		if (($action = $this->in('action')) !== null) {
 			$form->setAction($action);
 		}
 
 		/* setup form */
-		$defaults = $this->get_defaults();
-		$form = $this->setup_form($form, $defaults);
+		$defaults = $this->getDefaults();
+		$form = $this->setupForm($form, $defaults);
 
 		$this->out('form', $form);
 
@@ -77,7 +77,7 @@ class B_form__form extends Block {
 		if ($form->isSubmitted()) {
 			/* load data if valid */
 			if ($form->isValid()) {
-				if ($this->postprocess_data($form->getValues())) {
+				if ($this->postprocessData($form->getValues())) {
 					$this->out('done', true);
 				}
 			}
@@ -89,7 +89,7 @@ class B_form__form extends Block {
 
 			/* if skip submit, simulate submit */
 			if ($skip_submit) {
-				if ($form->isValid() && $this->postprocess_data($form->getValues())) {
+				if ($form->isValid() && $this->postprocessData($form->getValues())) {
 					$this->out('done', true);
 				}
 			}
@@ -97,13 +97,13 @@ class B_form__form extends Block {
 	}
 
 
-	protected function get_defaults()
+	protected function getDefaults()
 	{
 		return $this->in('defaults');
 	}
 
 
-	protected function setup_form($form, $defaults)
+	protected function setupForm($form, $defaults)
 	{
 		$factories = array(
 			/* type		=>       colon	 factory	*/
@@ -188,7 +188,7 @@ class B_form__form extends Block {
 	}
 
 
-	protected function postprocess_data($data)
+	protected function postprocessData($data)
 	{
 		// Nothing to do here, but you can overload this method and
 		// modify submited data before output is set.

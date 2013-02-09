@@ -55,7 +55,7 @@ class B_form__confirm extends B_form__form {
 
 	private $abort;
 
-	protected function setup_form($form, $defaults)
+	protected function setupForm($form, $defaults)
 	{
 		$form->addHidden('question', $this->in('question'));
 		$form->addHidden('note', $this->in('note'));
@@ -72,14 +72,14 @@ class B_form__confirm extends B_form__form {
 		return $form;
 	}
 
-	protected function postprocess_data($data)
+	protected function postprocessData($data)
 	{
 		if ($this->abort->isSubmittedBy()) {
-			$in_vals = $this->collect_numeric_inputs();
+			$in_vals = $this->collectNumericInputs();
 			$redirect_url = vsprintf($this->in('no_url'), $in_vals);
 			if ($redirect_url != '') {
 				$redirect_anchor = vsprintf($this->in('no_anchor'), $in_vals);
-				$this->template_option_set('root', 'redirect_url', $redirect_anchor ? $redirect_url.'#'.$redirect_anchor : $redirect_url);
+				$this->templateOptionSet('root', 'redirect_url', $redirect_anchor ? $redirect_url.'#'.$redirect_anchor : $redirect_url);
 			}
 			return false;
 		} else {

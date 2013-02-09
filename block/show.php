@@ -54,14 +54,14 @@ class B_form__show extends Block {
 	{
 		if (!$this->in('hide')) {
 			$data = array();
-                        foreach ($this->input_names() as $in) {
+                        foreach ($this->inputNames() as $in) {
                                 if (!in_array($in, array('form', 'template', 'hide', 'slot', 'slot-weight', 'enable'))) {
                                         $data[$in] = $this->in($in);
                                 }
                         }
                         $data['form'] = $this->in('form');
 
-                        $this->template_add(null, $this->in('template'), $data);
+                        $this->templateAdd(null, $this->in('template'), $data);
 		}
 	}
 
