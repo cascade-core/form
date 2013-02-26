@@ -36,11 +36,6 @@
  * See http://doc.nettephp.com/en/nette-forms
  */
 
-if (!class_exists('NForm')) {
-	require DIR_PLUGIN.'form/lib/nette.min.php';
-}
-
-
 class B_form__form extends Block {
 
 	protected $inputs = array(
@@ -59,6 +54,11 @@ class B_form__form extends Block {
 
 	public final function main()
 	{
+		/* load Nette */
+		if (!class_exists('NForm')) {
+			require DIR_PLUGIN.'form/lib/nette.min.php';
+		}
+
 		/* prepare form */
 		$form = new NForm($this->id());
 		$form->getElementPrototype()->id = $this->fullId();
