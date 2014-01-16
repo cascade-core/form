@@ -21,7 +21,7 @@
  */
 
 
-class B_form__show extends Block {
+class B_form__show extends \Cascade\Core\Block {
 
 	protected $inputs = array(
 		'form' => array(),		// Form from form/form block.

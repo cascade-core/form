@@ -1,0 +1,20 @@
+{
+	"name": "cascade/nette-form",
+	"type": "cascade-plugin",
+	"description": "Simple wrapper plugin for Nette forms",
+	"license": "Apache-2.0",
+	"authors": [
+		{
+			"name": "Josef Kufner",
+			"email": "jk@frozen-doe.net"
+		}
+	],
+	"extra": {
+		"plugin": "form"
+	},
+	"require": {
+		"cascade/composer-plugin": ">=1.1",
+		"nette/nette": "2.0.4"
+	}
+}
+

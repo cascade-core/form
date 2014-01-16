@@ -24,7 +24,7 @@
  * See http://doc.nettephp.com/en/nette-forms
  */
 
-class B_form__form extends Block {
+class B_form__form extends \Cascade\Core\Block {
 
 	protected $inputs = array(
 		'defaults' => null,
