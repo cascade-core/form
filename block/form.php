@@ -42,13 +42,8 @@ class B_form__form extends \Cascade\Core\Block {
 
 	public final function main()
 	{
-		/* load Nette */
-		if (!class_exists('NForm')) {
-			require DIR_PLUGIN.'form/lib/nette.min.php';
-		}
-
 		/* prepare form */
-		$form = new NForm($this->id());
+		$form = new \Nette\Forms\Form($this->id());
 		$form->getElementPrototype()->id = $this->fullId();
 		if (($action = $this->in('action')) !== null) {
 			$form->setAction($action);
