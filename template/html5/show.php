@@ -19,11 +19,9 @@
 
 function TPL_html5__form__show($t, $id, $d, $so)
 {
-
-	$d['form']->getElementPrototype()->addClass('default_form_layout');
-
 	echo "<!-- nette form begin -->\n";
-	echo $d['form'];
+	$d['form']->getElementPrototype()->addClass('default_form_layout');
+	$d['form']->render();
 	echo "<!-- nette form end -->\n";
 }
 
